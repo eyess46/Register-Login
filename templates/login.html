@@ -1,0 +1,145 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+	<title>Login - CoinsLord</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{% static 'images/icons/favicon.ico' %}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'fonts/Linearicons-Free-v1.0.0/icon-font.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animsition/css/animsition.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/daterangepicker/daterangepicker.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+<!--===============================================================================================-->
+</head>
+<body>
+
+	<div align="center">
+		<div class="container-login100">
+			<div class="wrap-login100 p-t-90 p-b-30">
+				<!--<a href="#"><img src="images/logo-free.png"></a>-->
+				<span class="login100-form-title p-b-40">
+						<h1><b>Coins <t style="color: #f6a132de">Lord</t></b></h1>
+					</span>
+					<form method="POST" enctype="multipart/form-data">
+						{% csrf_token %}
+                            {% for message in messages %}
+						    <h2 align="center">{{ message }}</h2>
+						{% endfor %}
+						<div class="login-form">
+							<h4 class="login-title">Login</h4>
+							<div class="row">
+								<div class="col-md-12 col-12 mb-20">
+									{{ form.as_p }}
+								</div><br><br><br>
+								
+								<div class="col-md-8">
+									<div class="check-box d-inline-block ml-0 ml-md-2 mt-10">
+										<input type="checkbox" id="remember_me">
+										<label for="remember_me">Remember me</label>
+									</div>
+								</div><br><br>
+								<div class="col-md-4 mt-10 mb-20 text-left text-md-right">
+									<a href="#"> Forgotten pasward?</a>
+								</div><br><br>
+								<div class="col-md-12">
+									<button class="login100-form-btn"><input type="submit" value="submit" style="background-color: #f6a132de"></button>
+								</div>
+							</div>
+						</div>
+					</form>
+					<style>
+						form div {
+							display:inline-block;
+							align-items: center;
+							margin-bottom: 5;
+							height: 1vh;
+							
+						}
+						form div label {
+							width: 200px;
+						}
+						form div input, form div select {
+							flex: 5;
+							margin-left: 10px;
+						}
+						input[type='text'],
+						input[type='email'],
+						input[type='password']{
+						  width: 100%;
+						  padding: 10px;
+						  border: 1px solid #ccc;
+						  border-radius: 4px;
+						  box-sizing: border-box;
+						  margin-bottom: 20px;
+						}
+						button[type='submit']{
+							background-color: rgb(81, 255, 0);
+							padding:12px 20px;
+							border: none;
+							border-radius: 4px;
+							cursor: pointer;
+							width: 100%
+						}
+						.error-message {
+							color: red;
+							margin-bottom: 10px;
+						}
+
+					</style>
+				</div>
+				<div class="col-sm-12 col-md-12 col-lg-6 col-xs-12">
+					
+			</div>
+		</div>
+	</div>
+
+
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/animsition/js/animsition.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/daterangepicker/moment.min.js' %}"></script>
+	<script src="{% static 'vendor/daterangepicker/daterangepicker.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/countdowntime/countdowntime.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'js/main.js' %}"></script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-23581568-13');
+	</script>
+</body>
+
+</html>
